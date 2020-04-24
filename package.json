@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/okayu8/webpack-crash-course-okayu#readme",
   "devDependencies": {
+    "live-server": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
   }

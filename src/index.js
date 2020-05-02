@@ -1,5 +1,6 @@
 import _ from "lodash";
 import "./style.css";
+import "./style.scss";
 import logo from "./atomicstyle_logo_black.png";
 
 function component() {

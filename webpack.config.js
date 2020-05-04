@@ -45,7 +45,6 @@ module.exports = {
       filename: "[name].[hash].css",
     }),
   ],
-
   optimization: {
     minimizer: [
       // うまく動かないためコメントアウト（uglifyjsによるconsole.log自動削除）
@@ -59,4 +58,6 @@ module.exports = {
       new OptimizeCSSAssetsPlugin({}),
     ],
   },
+  // devtoolsでエラー時にminifym前のsourceで確認できる
+  devtool: "eval-source-map",
 };

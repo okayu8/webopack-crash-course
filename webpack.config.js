@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const outputPath = path.resolve(__dirname, "dist");
 
@@ -13,12 +14,8 @@ module.exports = {
     rules: [
       { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader" }, // babel追加
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"], // loaderは逆順（後ろから順）に読み込まれる。順番に注意しないとコンパイルエラー
-      },
-      {
-        test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"], // loaderは逆順（後ろから順）に読み込まれる。順番に注意しないとコンパイルエラー
+        test: /\.(sc|c)ss$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"], // loaderは逆順（後ろから順）に読み込まれる。順番に注意しないとコンパイルエラー
       },
       {
         test: /\.(jpe?g|png|gif|svg|ico)$/i,
@@ -41,6 +38,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "./index.html",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].[hash].css",
     }),
   ],
 };

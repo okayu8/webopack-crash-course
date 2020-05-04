@@ -1,6 +1,6 @@
-import React from "react";
-import ReactDom from "react-dom";
-import "./style.css";
-import "./style.scss";
+import React from 'react'; // eslint-disable-line import/no-extraneous-dependencies
+import ReactDom from 'react-dom'; // eslint-disable-line import/no-extraneous-dependencies
+import './style.css';
+import './style.scss';
 
-ReactDom.render(<div>Hello, React!</div>, document.getElementById("root"));
+ReactDom.render(<div>Hello, React!</div>, document.getElementById('root'));
